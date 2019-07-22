@@ -3,7 +3,7 @@ import './sign-up.component';
 
 import { FormInput } from '../../components/form-input/form-input.component';
 import { CustomButton } from '../../components/custom-button/custom-button.component';
-import { auth, createUserWithEmailAndPassword, createUserProfileDocument } from '../../firebase/firebase.utils';
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 class SignUp extends React.Component{
 	constructor() {
@@ -20,7 +20,7 @@ class SignUp extends React.Component{
 	handleSubmit = async (ev) => {
 		ev.preventDefault();
 		const { displayName, email, password, confirmPassword } = this.state;
-		if (password != confirmPassword) {
+		if (password !== confirmPassword) {
 			alert('Password does not match');
 			return;
 		}
